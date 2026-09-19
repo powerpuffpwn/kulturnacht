@@ -1,0 +1,6 @@
+services: 
+ lel: 
+  build: .
+  command: sleep infinity
+  volumes:
+    - ./ctf:/app

@@ -99,6 +99,6 @@ I0000 00:00:1789823602.742558      57 mlir_graph_optimization_pass.cc:437] MLIR 
 [7569/7569] 00007568.jpg: not hotdog
 assembled 87x87 images -> 29x29 QR modules -> qrcode.png, but no orientation/polarity decoded automatically (pyzbar not installed, or image needs a manual look)
 root@a82717ea7166:/app# zbarimg --raw -q qrcode.png 2>/dev/null
-TPH{KulturNachtUlmCTF}
+TPH{[..]}
 
 ```

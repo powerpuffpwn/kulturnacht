@@ -6,6 +6,7 @@ docker compose -f ../docker-compose.yml exec -it lel bash
 ```
 
 ```bash
+# inside the container you can now follow the initialization
 cd /app
 
 # get labels and model 
@@ -13,10 +14,7 @@ git clone https://github.com/prash29/Hotdog-Not-Hotdog /tmp/model
 cp /tmp/model/graph_hotdog.pb .
 cp /tmp/model/labels_hotdog.txt .
 
-# old hot or not jpg picture
-# curl "https://drive.usercontent.google.com/uc?id=10RxJA5F0d037lNdrZ29fvIaaaBHuaulD&export=download" -L -o hotornot.jpg
-
-# tph specific image
+# tph specific ctf image
 # alternative download it via browser here: https://drive.google.com/file/d/1osWuQ7Y1B91la9BqpZardKvMtdRG_PUB/view
 curl "https://drive.usercontent.google.com/download?id=1osWuQ7Y1B91la9BqpZardKvMtdRG_PUB&export=download&confirm=t" -L -o hotornot.jpg
 
@@ -31,6 +29,9 @@ cd ..
 
 # run solver.py
 python3 solve.py 
+
+# show the qr code content and the flag
+zbarimg --raw -q qrcode.png 2>/dev/null
 ```
 
 Original DataSet: https://www.kaggle.com/datasets/thedatasith/hotdog-nothotdog
@@ -95,5 +96,9 @@ I0000 00:00:1789823602.742558      57 mlir_graph_optimization_pass.cc:437] MLIR 
 [600/7569] 00000599.jpg: not hotdog
 
 [.........]
+[7569/7569] 00007568.jpg: not hotdog
+assembled 87x87 images -> 29x29 QR modules -> qrcode.png, but no orientation/polarity decoded automatically (pyzbar not installed, or image needs a manual look)
+root@a82717ea7166:/app# zbarimg --raw -q qrcode.png 2>/dev/null
+TPH{KulturNachtUlmCTF}
 
 ```

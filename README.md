@@ -1,4 +1,4 @@
-# Kulturnacht :: HotDog or Not 
+# Kulturnacht : : HotDog or Not 
 > Mini CTF Challenge based on ICECTF2018
 
 ## Challenge
